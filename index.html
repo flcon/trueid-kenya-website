@@ -738,97 +738,104 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Reach out to us for identity verification services or to join our agent network.</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+254 727 752 539</p>
-                        </div>
+   <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Reach out to us for identity verification services or to join our agent network.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@trueidkenya.co.ke</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h4>Website</h4>
-                            <p>www.trueidkenya.co.ke</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Coverage</h4>
-                            <p>Nationwide service across all 47 counties in Kenya</p>
-                        </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+254 727 752 539</p>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Request Verification</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="Your Phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" required>
-                                <option value="">Select a Service</option>
-                                <option value="basic">Basic Identity Verification</option>
-                                <option value="land">Land Transaction Verification</option>
-                                <option value="employment">Employment Screening</option>
-                                <option value="legal">Legal & Notary Verification</option>
-                                <option value="kyc">KYC Services</option>
-                                <option value="corporate">Corporate Solutions</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="county">County</label>
-                            <input type="text" id="county" placeholder="Your County" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Additional Details</label>
-                            <textarea id="message" placeholder="Any specific requirements or questions"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Request</button>
-                    </form>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@trueidkenya.co.ke</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h4>Website</h4>
+                        <p>www.trueidkenya.co.ke</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Coverage</h4>
+                        <p>Nationwide service across all 47 counties in Kenya</p>
+                    </div>
                 </div>
             </div>
+            
+            <div class="contact-form">
+                <h3>Request Verification</h3>
+                <!-- UPDATED FORM WITH FORMSUBMIT -->
+                <form action="https://formsubmit.co/info@trueidkenya.co.ke" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Verification Request - TrueID Kenya">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourusername.github.io/trueid-kenya-website/thank-you.html">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="Basic Verification">Basic Identity Verification</option>
+                            <option value="Land Transaction">Land Transaction Verification</option>
+                            <option value="Employment Screening">Employment Screening</option>
+                            <option value="Legal Verification">Legal & Notary Verification</option>
+                            <option value="KYC Services">KYC Services</option>
+                            <option value="Corporate Solutions">Corporate Solutions</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="county">County *</label>
+                        <input type="text" id="county" name="county" placeholder="Your County" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" placeholder="Any specific requirements or questions"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
