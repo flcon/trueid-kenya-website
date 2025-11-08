@@ -14,6 +14,7 @@
             --light: #f8f9fa;
             --dark: #2c3e50;
             --gray: #7f8c8d;
+            --whatsapp: #25D366;
         }
         
         * {
@@ -85,6 +86,14 @@
         
         .btn-accent:hover {
             background: #c0392b;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
         }
         
         .section-title {
@@ -396,6 +405,10 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
+
+        .whatsapp-icon {
+            background: var(--whatsapp);
+        }
         
         .form-group {
             margin-bottom: 20px;
@@ -420,6 +433,49 @@
         .form-group textarea {
             height: 150px;
             resize: vertical;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-text {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
         }
         
         /* Footer */
@@ -538,10 +594,26 @@
             .hero p {
                 font-size: 18px;
             }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/254727752539?text=Hello%20TrueID%20Kenya,%20I%20would%20like%20to%20inquire%20about%20your%20verification%20services" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-text">Chat with us</div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -571,7 +643,11 @@
             <p>Nationwide identity verification service for land transactions, employment screening, and financial dealings in Kenya</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn">Request Verification</a>
-                <a href="#services" class="btn btn-accent">Our Services</a>
+                <a href="https://wa.me/254727752539?text=Hello%20TrueID%20Kenya,%20I%20would%20like%20to%20inquire%20about%20your%20verification%20services" 
+                   class="btn btn-whatsapp" 
+                   target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Us
+                </a>
             </div>
         </div>
     </section>
@@ -738,104 +814,121 @@
         </div>
     </section>
 
-   <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>Reach out to us for identity verification services or to join our agent network.</p>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+254 727 752 539</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h4>Email</h4>
-                        <p>info@trueidkenya.co.ke</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div>
-                        <h4>Website</h4>
-                        <p>www.trueidkenya.co.ke</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h4>Coverage</h4>
-                        <p>Nationwide service across all 47 counties in Kenya</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <h3>Request Verification</h3>
-                <!-- UPDATED FORM WITH FORMSUBMIT -->
-                <form action="https://formsubmit.co/info@trueidkenya.co.ke" method="POST">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Verification Request - TrueID Kenya">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://yourusername.github.io/trueid-kenya-website/thank-you.html">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Reach out to us for identity verification services or to join our agent network.</p>
                     
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+254 727 752 539</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@trueidkenya.co.ke</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>
+                                <a href="https://wa.me/254727752539?text=Hello%20TrueID%20Kenya,%20I%20would%20like%20to%20inquire%20about%20your%20verification%20services" 
+                                   style="color: white; text-decoration: underline;" 
+                                   target="_blank">
+                                    Click to Chat
+                                </a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="service">Service Needed *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a Service</option>
-                            <option value="Basic Verification">Basic Identity Verification</option>
-                            <option value="Land Transaction">Land Transaction Verification</option>
-                            <option value="Employment Screening">Employment Screening</option>
-                            <option value="Legal Verification">Legal & Notary Verification</option>
-                            <option value="KYC Services">KYC Services</option>
-                            <option value="Corporate Solutions">Corporate Solutions</option>
-                        </select>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Coverage</h4>
+                            <p>Nationwide service across all 47 counties in Kenya</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="county">County *</label>
-                        <input type="text" id="county" name="county" placeholder="Your County" required>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" placeholder="Any specific requirements or questions"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Submit Request</button>
-                </form>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Request Verification</h3>
+                    <!-- UPDATED FORM WITH YOUR EMAIL -->
+                    <form action="https://formsubmit.co/godfreyomia1997@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Verification Request - TrueID Kenya">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourusername.github.io/trueid-kenya-website/thank-you.html">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="Basic Verification">Basic Identity Verification</option>
+                                <option value="Land Transaction">Land Transaction Verification</option>
+                                <option value="Employment Screening">Employment Screening</option>
+                                <option value="Legal Verification">Legal & Notary Verification</option>
+                                <option value="KYC Services">KYC Services</option>
+                                <option value="Corporate Solutions">Corporate Solutions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="county">County *</label>
+                            <input type="text" id="county" name="county" placeholder="Your County" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" placeholder="Any specific requirements or questions"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Request</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -848,7 +941,7 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/254727752539" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -876,13 +969,15 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> +254 727 752 539</li>
                         <li><i class="fas fa-envelope"></i> info@trueidkenya.co.ke</li>
-                        <li><i class="fas fa-globe"></i> www.trueidkenya.co.ke</li>
+                        <li><i class="fab fa-whatsapp"></i> 
+                            <a href="https://wa.me/254727752539" target="_blank" style="color: #bdc3c7;">Click to Chat</a>
+                        </li>
                         <li><i class="fas fa-map-marker-alt"></i> Nationwide Coverage</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 TrueID Kenya Limited. All rights reserved. | Registered with ODPC | Compliant with Data Protection Act</p>
+                <p>&copy; 2023 TrueID Kenya Limited. All rights reserved. | Registered with ODPC | Compliant with Data Protection Act</p>
             </div>
         </div>
     </footer>
@@ -890,35 +985,40 @@
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').style.display = 
-                document.querySelector('nav ul').style.display === 'flex' ? 'none' : 'flex';
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         });
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a, .hero-btns a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu after click
-                if (window.innerWidth <= 768) {
-                    document.querySelector('nav ul').style.display = 'none';
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after click
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('nav ul').style.display = 'none';
+                    }
                 }
             });
         });
-        
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your request! We will contact you shortly.');
-            this.reset();
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('nav ul');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (window.innerWidth <= 768 && nav.style.display === 'flex' && 
+                !e.target.closest('nav') && !e.target.closest('.mobile-menu')) {
+                nav.style.display = 'none';
+            }
         });
     </script>
 </body>
